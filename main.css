@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*회원가입 및 고객센터*/
 .f_writing{ 
     text-decoration: none;
@@ -55,3 +56,20 @@
 }
 
 
+=======
+/*회원가입 및 고객센터*/
+.f_writing{ 
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+}  
+
+.firstTob_bar{
+    text-align: right;    
+}
+
+
+
+
+
+>>>>>>> e0c15df0d81eed096ba0d673ad49ffeae9540f5a
