@@ -1,4 +1,13 @@
-<<<<<<< HEAD
+.all_container{
+    width: 1500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /*플렉스 방향 : 세로*/
+    align-items: center; /*각 줄의 가운데로 정렬*/
+    position: relative;
+
+}
+/* 헤더 */
 /*회원가입 및 고객센터*/
 .f_writing{ 
     text-decoration: none;
@@ -6,10 +15,11 @@
     padding: 5px;
 }  
 
+/*화면축소했을때 가운데 오른쪽으로 보내고싶은데 안됨 확대했을때도 글자가 안보이게 넘어가면 좋겟음*/
 .firstTob_bar{
-    text-align: right; 
+    position: absolute;
+    right:0;
 }   
-/*어떻게 축소해도 오른쪽 위에 붙어있지 않은지*/
 
 .tab{
     margin-left: 3px;
@@ -22,6 +32,9 @@
     align-items: center;;
 }
 
+.logo{
+    margin-right: 50px;
+}
 
 .input_box{
     width: 300px;
@@ -36,6 +49,9 @@
     right: 40px;
 }
 
+.sec_option{
+    margin-left: 50px;
+}
 .s_writing{
     text-decoration: none;
     color: black;
@@ -47,29 +63,304 @@
     margin-right: 15px;
 }
 
+/*가운데정렬 해야함 어떻게 테이블로 하는지*/
+.m_writing{
+    width: 1500px;
+    width: 80%;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    margin: 0 20px;
+}
 
-.m_writing{/*아직 더 봐야함*/
+.banner{
+    display: flex;
+    justify-content: center; /* 가로 가운데 정렬 */
+    align-items: center; 
+}
+
+/*이미지가 늘어났으면 좋겠음*/
+.point_banner{
+    display: flex;
+    justify-content: center; /* 가로 가운데 정렬 */
+    align-items: center;
+    width: 1250;
+}
+
+.all_container{
+    width: 80%;
+    margin:0 auto;
+}
+
+.prd_container{
+    display: flex;
     justify-content: space-between;
+    position: relative;
+}
+
+.L_product{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    
+}
+
+.R_product{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-left: 50px;
+}
+
+.prd_img{
+    width: 215px;
+    height: 215px;
+}
+
+.title_w{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.plus_w{
+    display: flex;
+    justify-content: flex-end;
     text-decoration: none;
-    color: black;
-    margin: 0 10px;
+    color: rgb(131, 131, 131);
+   
+}
+
+.prd_name{
+    font-size: 12px;
+}
+
+.bf_price{
+    text-decoration-line: line-through;
+    color: rgb(131, 131, 131);;
+    font-size: 15px;
+}
+
+.price{
+    font-size: 20px;
+    color:red;
+    font-weight: bold;
+}
+
+.shopping_i{
+    display: flex;
+    justify-content: right;
+    margin-left: 30px;
 }
 
 
-=======
-/*회원가입 및 고객센터*/
-.f_writing{ 
-    text-decoration: none;
-    color: black;
-    padding: 5px;
-}  
+.price_set{
+    display: flex;
+    align-items: baseline;
+}   
 
-.firstTob_bar{
-    text-align: right;    
+.L_Lprd, .R_Lprd{
+    margin-right: 30px;
+}
+
+.tab4{
+    margin-left: 50px;
+}
+
+.sale{
+    background-color: rgb(255, 84, 84);
+    border-radius: 25px;
+    font-size: 12px;
+    color: white;
+    padding: 0px 8px;
+}
+
+.coupon{
+    background-color: rgb(110, 199, 65);
+    border-radius: 25px;
+    font-size: 12px;
+    color: white;
+    padding: 0px 8px;
+}
+
+.presentation{
+    background-color: rgb(84, 212, 255);
+    border-radius: 25px;
+    font-size: 12px;
+    color: white;
+    padding: 0px 8px;
+}
+
+
+.today_d{
+    background-color: rgb(255, 84, 198);
+    border-radius: 25px;
+    font-size: 12px;
+    color: white;
+    padding: 0px 8px;
 }
 
 
 
 
 
->>>>>>> e0c15df0d81eed096ba0d673ad49ffeae9540f5a
+.suggestion_but{
+    text-align: center;
+    margin: 40px 0px;
+}
+
+.suggestion_but2{
+    width: 300px;
+    height: 40px;
+    border: 1px solid #c2c2c2;
+    border-radius: 3px;
+    background-color: white;
+}   
+
+.week_img{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.week_img_size{
+    margin: 10px 20px;
+}
+
+.title_w{
+    text-align: center;
+}
+
+
+.pop_wbtn{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    
+}
+
+
+.event_btn{
+    display: flex;
+    justify-content: right;
+}
+
+
+.small_btn{
+    background-color: white;
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    color: black; /* 기본 텍스트 색상 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.small_btn:hover {
+    background-color: black;
+    color: white;
+  }
+  
+
+.pop_same, .only{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+/* 버튼이 수직가운데 정렬이 안되고 그 90프로 화면 밖으로 나가지지 않음 */
+.RL_btn{
+    vertical-align:middle;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 100px;
+    background-color: #c2c2c2;
+    color: white;
+}
+
+.popularity_img{
+    margin: 0px 10px;
+}
+
+.AD{
+    font-size: 13px;
+    color: #8f8f8f;
+    background-color: #efefef;
+    padding: 10px;
+    vertical-align:middle;
+}
+
+/* MDsame이 가운데 정렬이 안돼서 margin으로 대체함 */
+.MD , .main_footer{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}   
+
+
+.MD_same{
+    margin: 50px 50px;
+}
+
+.custom_hr{
+    width: 1300px;
+    border-width:1px 0 0 0; 
+    border-color: black;
+}
+
+.custom_hr2{
+    width: 800px;
+}
+
+
+.service_center{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 30px;
+}
+
+.announcement{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-right: 50px;
+}
+
+.gray_w{
+    color: #8f8f8f;
+}
+
+.call{
+    color: #81e220;
+    font-size: 40px;
+}
+
+
+.call_all{
+    margin: 0 20px;
+}
+
+
+.sc_img{
+    margin-left: 100px;
+}
+
+
+.sc_btn1{
+    margin-top: 30px;
+    width: 150px;
+    height: 70px;
+    border: none;
+    background-color: #8f8f8f;
+    color: white;
+}
+
+.all_container2{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    position: relative;
+}
