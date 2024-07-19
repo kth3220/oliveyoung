@@ -63,14 +63,13 @@
     margin-right: 15px;
 }
 
+
+
 /*가운데정렬 해야함 어떻게 테이블로 하는지*/
 .m_writing{
-    width: 1500px;
-    width: 80%;
-    align-items: center;
     text-decoration: none;
     color: black;
-    margin: 0 20px;
+    margin: 0 35px;
 }
 
 .banner{
@@ -372,7 +371,7 @@
     border: #878787;
 }
 
-.f_container{
+.f_container, .menu_bar {
     width: 1500px;
     width: 100%;
     display: flex;
