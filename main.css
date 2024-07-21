@@ -13,7 +13,7 @@
     text-decoration: none;
     color: black;
     padding: 5px;
-}  
+} 
 
 /*화면축소했을때 가운데 오른쪽으로 보내고싶은데 안됨 확대했을때도 글자가 안보이게 넘어가면 좋겟음*/
 .firstTob_bar{
@@ -54,9 +54,14 @@
 }
 .s_writing{
     text-decoration: none;
-    color: black;
-    
+    color: #6666;
 }
+
+.s_writing:hover{
+    text-decoration: underline;
+}
+
+
 
 .tab2{
     margin-left: 15px;
@@ -70,6 +75,11 @@
     text-decoration: none;
     color: black;
     margin: 0 35px;
+    font-weight: bold;
+}
+.m_writing:hover{
+    color: rgb(255, 39, 39);
+    text-decoration: underline;
 }
 
 .banner{
@@ -330,6 +340,7 @@
 
 .gray_w{
     color: #8f8f8f;
+    text-decoration: none;
 }
 
 .call{
@@ -377,6 +388,11 @@
     display: flex;
     justify-content: center;
 }
+
+.logo_img{
+    margin-top: 30px;
+}
+
 
 
 .footer_2{
