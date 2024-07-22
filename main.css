@@ -409,11 +409,11 @@
     height: 52px;
     display: flex;
     justify-content: center;
-    vertical-align:middle;;
 }
 
 .ft_writing{
     margin-right: 30px;
+    margin-top: 8px;
 }
 
 .custom-hr {
