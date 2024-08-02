@@ -1,25 +1,110 @@
-.all_container{
-    width: 1500px;
-    width: 100%;
+.all_container {
+    width: 1020px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column; /*플렉스 방향 : 세로*/
-    align-items: center; /*각 줄의 가운데로 정렬*/
-    position: relative;
-
+    flex-direction: column;
 }
-/* 헤더 */
-/*회원가입 및 고객센터*/
-.f_writing, .ft_writing{ 
+
+header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.menu_bar {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.nav-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    writing-mode: horizontal-tb;
+}
+
+.f_writing, .ft_writing {
     text-decoration: none;
     color: black;
     padding: 5px;
-} 
+}
 
-/*화면축소했을때 가운데 오른쪽으로 보내고싶은데 안됨 확대했을때도 글자가 안보이게 넘어가면 좋겟음*/
-.firstTob_bar{
+.category {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+}
+
+.category::before, .category::after {
+    content: '';
     position: absolute;
-    right:0;
-}   
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: lightgray;
+}
+
+.category::before {
+    left: 0;
+}
+
+.category::after {
+    right: 0;
+}
+
+hr {
+    border: none;
+    height: 2px;
+    background-color: lightgray;
+    margin: 0;
+    width: 100%;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 10px;
+}
+
+.sidebar a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+    overflow: hidden; /* 넘치는 부분 숨김 */
+    text-overflow: ellipsis; /* 넘치는 부분에 ... 표시 */
+}
+
+.sidebar a:hover {
+    background-color: rgb(43, 43, 43);
+}
+
+.all_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.main_content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.sidebar {
+    flex-shrink: 0;
+}
+
+.content_area {
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
 
 .tab{
     margin-left: 3px;
@@ -68,14 +153,19 @@
     margin-right: 15px;
 }
 
-
+.all_hr{ 
+    width: 100%; /* 화면 전체 너비 */
+   }
 
 /*가운데정렬 해야함 어떻게 테이블로 하는지*/
 .m_writing{
     text-decoration: none;
     color: black;
-    margin: 0 35px;
+    margin: 0 30px;
     font-weight: bold;
+    padding: 5px;
+    white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+    
 }
 .m_writing:hover{
     color: rgb(255, 39, 39);
