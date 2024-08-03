@@ -1,22 +1,93 @@
-.all_container {
+header {
     width: 1020px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
 }
 
-header {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.firstTob_bar{
+    position: relative;
     width: 100%;
+    height: 30px;
+    letter-spacing: -.005em;
 }
+
+.header_top{
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.f_writing{
+    font-size: 12px;
+    color: #333;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.secondTop_bar{
+    height: 90px;
+    width: 1020px;
+    white-space: nowrap;
+}
+
+.logo{
+    float: left;
+    margin-top: 22px;
+}
+
+
+.input_bigbox{
+    float: left;
+    position: relative;
+    width: 340px;
+    height: 40px;
+    margin: 22px 0 0 50px;
+    border: 1px solid #82dc28;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.input_box {
+    
+    border:none; /* 기본 테두리 추가 */
+    outline: none; /* 포커스 시 외곽선 제거 */
+    margin-left: -30px;
+}
+
+
+.search_icon{
+    position: relative;
+    left: 10px;
+    top: 12px;
+}
+
+.sec_option{
+    float: right;
+    margin-top: 10px;
+}
+
+
+.s_writing{
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+}
+
+.fa-truck, .fa-caret-down{
+    color: #8f8f8f;
+}
+
+.s_writing:hover{
+    text-decoration: underline;
+    text-underline-offset: 7px;
+}
+
+
 
 .menu_bar {
-    width: 100%;
-    position: relative;
-    z-index: 1;
+    width: 1020px;
 }
 
 .nav-items {
@@ -27,33 +98,36 @@ header {
     writing-mode: horizontal-tb;
 }
 
-.f_writing, .ft_writing {
+.ft_writing {
     text-decoration: none;
     color: black;
     padding: 5px;
 }
 
 .category {
-    display: inline-block;
-    position: relative;
-    padding: 10px 20px;
+    width: 150px;
+    height: 44px;
+    border-right: 1px solid #ddd;
+    border-left: 1px solid #ddd;
 }
 
-.category::before, .category::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 1px;
-    height: 100%;
-    background-color: lightgray;
+.fa-bars{
+    margin-right: 10px;
 }
 
-.category::before {
-    left: 0;
+.m_writing{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
+    margin-right: 25px;
 }
-
-.category::after {
-    right: 0;
+.m_writing:hover{
+    color: rgb(255, 39, 39);
+    text-decoration: underline;
 }
 
 hr {
@@ -110,41 +184,13 @@ hr {
     margin-left: 3px;
 }
 
-.secondTop_bar{
-    display: flex;
-    justify-content: space-between;
-    margin: 30px 0px;
-    align-items: center;;
-}
 
-.logo{
-    margin-right: 50px;
-}
 
-.input_box{
-    width: 300px;
-    height:38px;
-    border: 1px solid #82dc28;
-    border-radius: 26px;
-    padding: 0px 20px; 
-}
 
-.search_icon{
-    position: relative;
-    right: 40px;
-}
 
-.sec_option{
-    margin-left: 50px;
-}
-.s_writing{
-    text-decoration: none;
-    color: #6666;
-}
 
-.s_writing:hover{
-    text-decoration: underline;
-}
+
+
 
 
 
@@ -157,20 +203,7 @@ hr {
     width: 100%; /* 화면 전체 너비 */
    }
 
-/*가운데정렬 해야함 어떻게 테이블로 하는지*/
-.m_writing{
-    text-decoration: none;
-    color: black;
-    margin: 0 30px;
-    font-weight: bold;
-    padding: 5px;
-    white-space: nowrap; /* 텍스트 줄 바꿈 방지 */
-    
-}
-.m_writing:hover{
-    color: rgb(255, 39, 39);
-    text-decoration: underline;
-}
+
 
 .banner{
     display: flex;
@@ -479,9 +512,7 @@ hr {
     justify-content: center;
 }
 
-.logo_img{
-    margin-top: 30px;
-}
+
 
 
 
