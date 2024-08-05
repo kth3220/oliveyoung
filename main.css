@@ -92,6 +92,8 @@ header {
 .main{
     width: 1020px;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden; /* .main의 범위를 넘어서는 부분 숨김 */
 }
 
 .menu_bar {
@@ -139,9 +141,6 @@ header {
     margin-right: 10px;
 }
 
-
-
-
 .all_hr { 
     width: 100%; /* 화면 전체 너비 */
 }
@@ -163,6 +162,7 @@ header {
     width: 200px;
     color: #fff;
     padding: 10px;
+    z-index: 2; /* 배너 이미지보다 앞으로 오도록 설정 */
 }
 
 .on_sidebar {
@@ -203,13 +203,18 @@ hr {
 }
 
 .banner {
+    display: block;
     position: relative;
-    width: 100%;
     height: 450px;
-    background: url('img/banner.jpg') no-repeat center center; /* 배너 이미지를 전체화면에 걸쳐 표시 */
-    background-size: cover; /* 배경 이미지 크기 조정 */
-    z-index: -1; /* 배너 이미지를 배경으로 보내기 */
+    overflow: hidden;
 }
+
+.banner img {
+    width: 100%; /* 배너의 너비에 맞춤 */
+    height: auto; /* 이미지 비율 유지 */
+    object-fit: cover; /* 이미지가 비율을 유지하면서 배너를 채우도록 함 */
+}
+
 
 .tab{
     margin-left: 3px;
@@ -235,7 +240,6 @@ hr {
 
 
 
-
 /*이미지가 늘어났으면 좋겠음*/
 .point_banner{
     display: flex;
@@ -244,148 +248,194 @@ hr {
     width: 1250;
 }
 
-.all_container{
-    width: 80%;
-    margin:0 auto;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.prd_container {
+    display: flex;
+    width: 1020px;
+    margin: 0 auto;
 }
 
-.prd_container{
+.L_product_section, .R_product_section {
+    flex: 1;
+    position: relative;
+}
+
+.vertical_separator {
+    width: 1px;
+    background-color: #d2d2d2;
+    margin: 0 30px;
+}
+
+
+.L_product, .R_product {
     display: flex;
     justify-content: space-between;
     position: relative;
 }
 
-.L_product{
+.R_product {
     display: flex;
     justify-content: space-between;
     position: relative;
-    
+   
 }
 
-.R_product{
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    margin-left: 50px;
-}
-
-.prd_img{
+.prd_img {
     width: 215px;
     height: 215px;
 }
 
-.title_w{
+.title_w {
     font-size: 30px;
     font-weight: bold;
+    text-align: left;
+    text-align: center;
 }
 
-.plus_w{
+.plus_w {
     display: flex;
     justify-content: flex-end;
     text-decoration: none;
     color: rgb(131, 131, 131);
-   
 }
 
-.prd_name{
-    font-size: 12px;
+.prd_name {
+    overflow: hidden;                /* 넘치는 내용을 숨김 */
+    height: 36px;                    /* 높이를 텍스트의 크기와 줄 간격에 맞게 조정 */
+    width: 215px;                    /* 너비를 215px로 설정하여 이미지와 일치시킴 */
+    padding: 2px 0;                 /* 상하 여백을 2px로 설정 */
+    -webkit-box-orient: vertical;    /* Flexbox 방향을 수직으로 설정 */
+    line-height: 18px;               /* 줄 간격을 18px로 설정 */
+    text-overflow: ellipsis;         /* 넘치는 텍스트를 '...'로 표시 */
+    display: -webkit-box;            /* Flexbox를 사용하여 요소를 표시 */
+    -webkit-line-clamp: 2;           /* 두 줄까지만 표시하고 나머지는 잘림 */
+    word-break: keep-all;            /* 단어를 자르지 않고 전체를 유지 */
+    color: #6c6c6c;                     /* 텍스트 색상을 검정으로 설정 */
+    font-size: 14px;                 /* 글꼴 크기를 14px로 설정 */
+    text-align: left;                /* 텍스트를 왼쪽 정렬 */
 }
 
-.bf_price{
+.bf_price {
     text-decoration-line: line-through;
-    color: rgb(131, 131, 131);;
+    color: rgb(131, 131, 131);
     font-size: 15px;
 }
 
-.price{
+.price {
     font-size: 20px;
-    color:red;
+    color: red;
     font-weight: bold;
 }
 
-.shopping_i{
-    display: flex;
-    justify-content: right;
-    margin-left: 30px;
+.price_set {
+    display: flex;              /* Flexbox 레이아웃을 사용 */
+    align-items: center;        /* 자식 요소들을 수직으로 가운데 정렬 */
 }
 
+.left-group {
+    display: flex;              /* 왼쪽 그룹 요소를 Flexbox 레이아웃으로 설정 */
+}
 
-.price_set{
-    display: flex;
-    align-items: baseline;
-}   
+.shopping_i {
+    margin-left: auto;          /* 남은 공간을 채워서 오른쪽으로 이동 */
+    display: flex;              /* Flexbox 레이아웃을 사용 */
+    align-items: center;        /* 아이콘을 수직으로 가운데 정렬 */
+    margin-right: 8px;
+}
 
-.L_Lprd, .R_Lprd{
+.L_Lprd, .R_Lprd {
     margin-right: 30px;
 }
 
-.tab4{
+.tab4 {
     margin-left: 50px;
 }
 
+.sale, .coupon, .presentation, .today_d {
+    border-radius: 25px;
+    font-size: 12px;
+    color: white;
+    padding: 0px 8px;
+    margin-left: -3px;
+    text-align: center;
+}
+
 .sale{
+    width: 30px;
     background-color: rgb(255, 84, 84);
-    border-radius: 25px;
-    font-size: 12px;
-    color: white;
-    padding: 0px 8px;
 }
 
-.coupon{
-    background-color: rgb(110, 199, 65);
-    border-radius: 25px;
-    font-size: 12px;
-    color: white;
-    padding: 0px 8px;
+.coupon {
+    width: 30px;
+    background-color: #9bce26;
 }
 
-.presentation{
-    background-color: rgb(84, 212, 255);
-    border-radius: 25px;
-    font-size: 12px;
-    color: white;
-    padding: 0px 8px;
+.presentation {
+    width: 30px;
+    background-color: #6fcff7;
 }
 
-
-.today_d{
-    background-color: rgb(255, 84, 198);
-    border-radius: 25px;
-    font-size: 12px;
-    color: white;
-    padding: 0px 8px;
+.today_d {
+    width: 60px;
+    background-color: #f374b7;
 }
 
-
-
-
-
-.suggestion_but{
+.suggestion_but {
     text-align: center;
-    margin: 40px 0px;
 }
 
-.suggestion_but2{
-    width: 300px;
+.suggestion_but2 {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 335px;
     height: 40px;
-    border: 1px solid #c2c2c2;
-    border-radius: 3px;
-    background-color: white;
-}   
-
-.week_img{
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-}
-
-.week_img_size{
-    margin: 10px 20px;
-}
-
-.title_w{
+    background: 0 0;
     text-align: center;
+    color: #6b6b6b;
+    
 }
+
+.week_img {
+    display: flex;                     /* Flexbox 레이아웃을 사용 */
+    justify-content: center;          /* 이미지들을 가운데 정렬 */
+    align-items: center;              /* 수직 가운데 정렬 */
+    width: 1060px;                    /* 컨테이너의 너비를 1020px로 설정 */
+    margin: 0 auto;                   /* 컨테이너를 수평 가운데 정렬 */
+    overflow: hidden;                 /* 컨테이너의 범위를 넘는 부분을 숨김 */
+}
+
+.week_img_size {
+    display: flex;                    /* Flexbox 레이아웃을 사용하여 자식 요소를 정렬 */
+    width: 500px;                     /* 이미지의 너비를 500px로 설정 */
+    height: 227px;                    /* 이미지의 높이를 227px로 설정 */
+    margin: 10px 20px;                /* 이미지 간의 여백을 설정 */
+    border-radius: 8px;              /* 이미지의 모서리를 둥글게 설정 */
+    overflow: hidden;                /* 자식 요소가 부모 요소를 넘지 않도록 설정 */
+}
+
+.week_img_size img {
+    width: 100%;                      /* 부모 요소의 너비에 맞게 이미지 크기 조정 */
+    height: 100%;                     /* 부모 요소의 높이에 맞게 이미지 크기 조정 */
+    object-fit: cover;                /* 이미지가 컨테이너에 맞게 잘림 */
+    border-radius: inherit;          /* 부모의 border-radius를 상속받음 */
+}
+
 
 
 .pop_wbtn{
@@ -396,10 +446,13 @@ hr {
 }
 
 
-.event_btn{
-    display: flex;
-    justify-content: right;
+.event_btn {
+    display: flex;                     /* Flexbox 레이아웃을 사용 */
+    justify-content: flex-end;        /* 자식 요소를 오른쪽 정렬 */
+    width: 1020px;                    /* 컨테이너의 너비를 1020px로 설정 */
+    margin: 0 auto;                   /* 수평 가운데 정렬 */
 }
+
 
 
 .small_btn{
@@ -421,25 +474,71 @@ hr {
   
 
 .pop_same, .only{
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
+    display: flex;                     /* Flexbox 레이아웃을 사용 */
+    justify-content: flex-end;        /* 자식 요소를 오른쪽 정렬 */
+    align-items: center;              /* 자식 요소를 상하 가운데 정렬 */
+    width: 1020px;                    /* 컨테이너의 너비를 1020px로 설정 */
+    margin: 0 auto;                   /* 수평 가운데 정렬 */
+    position: relative;  
+
 }
 
-/* 버튼이 수직가운데 정렬이 안되고 그 90프로 화면 밖으로 나가지지 않음 */
-.RL_btn{
-    vertical-align:middle;
+
+.L_btn, .R_btn {
+    display: block;
+    vertical-align: middle;
     width: 30px;
     height: 30px;
     border: none;
     border-radius: 100px;
     background-color: #c2c2c2;
     color: white;
+    position: absolute;               /* 절대 위치 설정 */
 }
 
-.popularity_img{
-    margin: 0px 10px;
+.L_btn {
+    left: -60px;                      /* 왼쪽으로 60px 이동 */
 }
+
+.R_btn {
+    right: -60px;                     /* 오른쪽으로 60px 이동 */
+}
+
+.popularity_img {
+    display: flex;                     /* Flexbox 레이아웃을 사용하여 이미지들을 가로로 정렬 */
+    justify-content: center;          /* 이미지들을 가운데 정렬 */
+    width: 1020px;                    /* 컨테이너의 너비를 1020px로 설정 */
+    margin: 0 auto;                   /* 수평 가운데 정렬 */
+    overflow: hidden;                 /* 컨테이너의 범위를 넘는 부분을 숨김 */
+}
+
+.popularity_img a {
+    display: block;                   /* 링크를 블록으로 설정하여 이미지 크기와 위치 제어 */
+    width: 500px;                     /* 링크의 너비를 500px로 설정 */
+    height: auto;                     /* 링크의 높이는 자동으로 조정 */
+    margin: 0 10px;                   /* 이미지 간의 여백을 설정 */
+}
+
+.popularity_img img {
+    width: 100%;                      /* 이미지의 가로 크기를 부모 링크 요소에 맞게 설정 */
+    height: auto;                     /* 이미지의 세로 크기는 비율에 맞게 자동 조정 */
+    display: block;                   /* 이미지 주변의 여백 문제를 방지하기 위해 블록으로 설정 */
+}
+
+
+.only a {
+    flex: 1;                          /* 각 링크 요소가 컨테이너의 가용 공간을 균등하게 차지하도록 설정 */
+    text-align: center;               /* 이미지가 링크 내에서 가운데 정렬되도록 설정 */
+    padding: 0 10px;                  /* 이미지 사이에 여백을 추가 */
+}
+
+.only img {
+    width: 100%;                      /* 이미지가 부모 요소의 너비를 100%로 차지하도록 설정 */
+    height: auto;                     /* 이미지의 높이는 자동으로 비율에 맞게 조정 */
+    display: block;                   /* 이미지 주변의 여백 문제를 방지하기 위해 블록으로 설정 */
+}
+
+
 
 .AD{
     font-size: 13px;
@@ -449,16 +548,39 @@ hr {
     vertical-align:middle;
 }
 
-/* MDsame이 가운데 정렬이 안돼서 margin으로 대체함 */
-.MD , .main_footer, .footer_bar{
-    display: flex;
-    justify-content: space-between;
+
+.MD, .main_footer, .footer_bar {
+    display: flex;                     /* Flexbox 레이아웃을 사용하여 이미지들을 가로로 정렬 */
+    justify-content: center;                    /* Flexbox 레이아웃을 사용 */
     flex-wrap: nowrap;
-}   
+    margin: 0 auto;                 /* 자식 요소들을 줄바꿈 없이 한 줄에 배치 */
+    width: 100%;
+    width: 1020px;                      /* MD 컨테이너의 너비를 100%로 설정 */
+}
 
+.L_MD, .R_MD {
+    display: flex;                   /* Flexbox 레이아웃을 사용 */
+    align-items: flex-start;        /* 자식 요소들을 상단 정렬 */
+    width: 48%;                      /* 각 요소의 너비를 48%로 설정 (두 개의 요소를 한 줄에 배치) */
+    box-sizing: border-box;         /* 패딩과 테두리를 포함한 전체 너비 및 높이 계산 */
+}
 
-.MD_same{
-    margin: 50px 50px;
+.MD_img {
+    width: 50%;                      /* 이미지 영역의 너비를 50%로 설정 */
+    margin-right: 20px;             /* 이미지와 텍스트 사이에 여백 추가 */
+}
+
+.MD_img img {
+    width: 100%;                     /* 이미지가 컨테이너 너비에 맞게 설정 */
+    height: auto;                    /* 이미지 비율에 맞게 높이 자동 조정 */
+    display: block;                  /* 이미지 주변의 여백 문제를 방지하기 위해 블록으로 설정 */
+}
+
+.MD_same {
+    width: 50%;                      /* 텍스트 영역의 너비를 50%로 설정 */
+    display: flex;                  /* Flexbox 레이아웃을 사용 */
+    flex-direction: column;         /* 자식 요소들을 수직으로 배치 */
+    justify-content: space-between; /* 자식 요소들 간에 공간을 균등하게 배분 */
 }
 
 .custom_hr{
