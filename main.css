@@ -549,7 +549,7 @@ hr {
 }
 
 
-.MD, .main_footer, .footer_bar {
+.MD, .footer_bar {
     display: flex;                     /* Flexbox 레이아웃을 사용하여 이미지들을 가로로 정렬 */
     justify-content: center;                    /* Flexbox 레이아웃을 사용 */
     flex-wrap: nowrap;
@@ -557,6 +557,9 @@ hr {
     width: 100%;
     width: 1020px;                      /* MD 컨테이너의 너비를 100%로 설정 */
 }
+
+
+
 
 .L_MD, .R_MD {
     display: flex;                   /* Flexbox 레이아웃을 사용 */
@@ -592,47 +595,99 @@ hr {
 .custom_hr2{
     width: 800px;
 }
-
-
-.service_center{
+.main_footer {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    margin-top: 30px;
+    align-items: flex-start;
+    width: 1020px;
+    min-height: 246px;
+    margin-top: 60px;
+    margin: 0 auto; 
+    border-top: 1px solid #000;
 }
 
-.announcement{
+.left_section {
+    width: 640px;
+}
+
+.announcement {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    margin-right: 50px;
+    align-items: center;
+    width: 100%;
+    font-size: 18px;
+    color: #000;
 }
 
-.gray_w{
-    color: #8f8f8f;
+.m_f_w {
+    font-size: 18px;
+    color: #000;
+}
+
+.gray_w {
+    color: #888;
+}
+
+.plus_w {
+    color: #000;
     text-decoration: none;
 }
 
-.call{
+.custom_hr2 {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}
+
+.service_center {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-top: 35px;
+    border-top: 1px solid #ddd;
+    line-height: 24px;
+}
+
+.call_all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+    margin: 0 20px;
+}
+
+.service_h {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.foot_w {
+    margin-bottom: 7px;
+    color: #000;
+    font-size: 12px;
+    line-height: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.call {
     color: #81e220;
     font-size: 40px;
 }
 
-
-.call_all{
-    margin: 0 20px;
+.sc_img {
+    position: relative;
+    width: 300px;
+    height: 246px;
 }
 
-
-.sc_img{
-    margin-left: 100px;
-}
-
-
-.sc_btn1{
-    margin-top: 30px;
+.sc_btn1 {
+    margin-top: 10px;
     width: 150px;
-    height: 70px;
+    height: 40px;
     border: none;
     background-color: #8f8f8f;
     color: white;
