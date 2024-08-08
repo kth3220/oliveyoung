@@ -282,13 +282,12 @@ hr {
     height: 36px;
     width: 215px;
     padding: 2px 0;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: vertical; /* Flexbox에서 아이템을 수직 방향으로 배치하도록 설정. (WebKit 기반 브라우저 전용 속성) */
     line-height: 18px;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
-    word-break: keep-all;
-    color: #6c6c6c;
+    -webkit-line-clamp: 2;/* 텍스트를 최대 2줄로 제한 */
+    color: #000;
     font-size: 14px;
     text-align: left;
 }
