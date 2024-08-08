@@ -9,7 +9,6 @@ header {
     position: relative;
     width: 100%;
     height: 30px;
-    letter-spacing: -0.005em;
 }
 
 .header_top {
@@ -26,29 +25,31 @@ header {
     text-decoration: none;
 }
 
+
 /* 로고 및 검색창 라인 */
 .secondTop_bar {
     height: 90px;
     width: 1020px;
     white-space: nowrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
-    float: left;
-    margin-top: 22px;
+    margin: 20px 0px;
 }
 
 .input_bigbox {
-    float: left;
     position: relative;
     width: 340px;
     height: 40px;
-    margin: 22px 0 0 50px;
+    margin: 10px 0px 10px 50px;
     border: 1px solid #82dc28;
     background: #fff;
     border-radius: 20px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-around; /* 자식 요소들 사이의 공간을 균등하게 배치 */
 }
 
 .input_box {
@@ -59,20 +60,20 @@ header {
 
 .search_icon {
     position: relative;
-    left: 10px;
+    left: 30px;
     top: 12px;
 }
 
 .sec_option {
-    float: right;
-    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px ;
 }
 
 .s_writing {
     font-size: 14px;
     color: #333;
     text-decoration: none;
-    float: left;
     position: relative;
     height: 65px;
     padding-top: 22px;
@@ -98,18 +99,12 @@ hr {
 }
 
 .main {
-    display: flex;
-    justify-content: center;
     width: 1020px;
     margin: 0 auto;
-    position: relative;
-    overflow: hidden;
 }
 
 .menu_bar {
     position: relative;
-    width: 100%;
-    min-width: 1020px;
     height: 47px;
 }
 
@@ -118,7 +113,6 @@ hr {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    writing-mode: horizontal-tb;
 }
 
 .m_writing {
@@ -141,7 +135,8 @@ hr {
 
 .category {
     width: 170px;
-    height: 44px;
+    height: 50px;
+    margin-left: 20px;
     border-right: 1px solid #ddd;
     border-left: 1px solid #ddd;
 }
@@ -153,6 +148,7 @@ hr {
 /* 전체 컨테이너 설정 */
 .main_content {
     position: relative;
+    width: 100%;
     width: 1800px;
     margin: 0 auto;
     height: 450px;
@@ -162,10 +158,7 @@ hr {
 /* 배너 설정 */
 .banner {
     position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2000px;
+    width: 100%;
     height: 450px;
     z-index: 0;
 }
@@ -176,28 +169,21 @@ hr {
     object-fit: cover;
 }
 
-/* 사이드바가 배너 위에 위치하도록 설정 */
+
 .menu_bar2 {
-    position: absolute; /* 절대 위치로 설정 */
-    top: 185px;
-    left: 49%; /* 화면 가운데로 정렬 */
-    transform: translateX(-50%); /* 가운데 정렬 보정 */
-    width: 1020px; /* 사이드바 너비 */
-    height: 450px; /* 사이드바 높이 */
-    z-index: 2; /* 사이드바를 배너 위에 표시 */
-    display: flex;
-    align-items: flex-start; /* 사이드바를 상단에 정렬 */
+    position: absolute; 
+    top: 180px;
+    z-index: 1; 
 }
 
 
 /* 사이드바 설정 */
 .sidebar {
-    position: absolute;
     height: 450px;
     width: 170px;
     background: rgba(51, 51, 51, .5);
     color: #fff;
-    overflow: visible;
+    z-index: 2; 
 }
 
 /* 사이드바 링크 스타일 */
@@ -205,9 +191,8 @@ hr {
     color: #fff;
     text-decoration: none;
     display: block;
-    padding: 6px 0;
+    padding: 6px 0px 6px 20px;
     white-space: nowrap;
-    text-overflow: ellipsis;
     font-size: 14px;
 }
 
@@ -217,13 +202,12 @@ hr {
 
 /* 사이드바 항목 스타일 */
 .on_sidebar {
-    display: block;
+    display: flex;
+    align-items: center; 
     height: 20px;
-    line-height: 31px;
-    font-size: 10px;
     color: #fff;
     font-weight: 700;
-    margin-left: 30px;
+    
 }
 .tab {
     margin-left: 3px;
@@ -454,7 +438,7 @@ hr {
 
 .L_btn, .R_btn {
     display: block;
-    vertical-align: middle;
+    align-items: center;
     width: 30px;
     height: 30px;
     border: none;
@@ -510,7 +494,7 @@ hr {
     color: #8f8f8f;
     background-color: #efefef;
     padding: 10px;
-    vertical-align: middle;
+    align-items: center;
 }
 
 .MD, .footer_bar {
@@ -726,7 +710,7 @@ hr {
     border-bottom: 1px solid #ddd;
     width: 100%;
     white-space: nowrap;
-    height: 55px;
+    
 }
 
 .footer_bar2 {
@@ -736,15 +720,19 @@ hr {
     width: 1020px;
     height: 100%;
     margin: 0 auto;
+    height: 55px;
 }
 
-.footer_m_1 {
-    position: relative;
-    padding-left: 236px;
-    background: 0 0;
-    height: auto;
-    float: left;
+.footer_bar3{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1020px;
+    height: 100%;
+    margin: 0 auto;
+    height: 40px;
 }
+
 
 .footer_log_img {
     width: 236px;
@@ -783,21 +771,19 @@ hr {
     font-size: 11px;
     line-height: 15px;
     padding-left: 236px;
-    margin: 20px 0 30px;
+    margin: 20px 30px;
 }
 
-.L_footer {
-    margin-right: 1000px;
-}
+
 
 .fa-comment, .fa-youtube, .fa-instagram, .fa-facebook {
     color: #aaa;
 }
 
 .R_footer {
-    float: left;
+    display: flex;
+    justify-content: flex-end;
     margin-right: 4px;
     color: #aaa;
-    font-size: 12px;
     padding: 3px 0 0;
 }
